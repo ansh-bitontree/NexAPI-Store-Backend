@@ -3,7 +3,6 @@ from typing import Optional
 from datetime import date
 
 
-
 class DOBMixin(BaseModel):
     dob: date
 
@@ -15,7 +14,7 @@ class DOBMixin(BaseModel):
 
         today = date.today()
         age = today.year - val.year - ((today.month, today.day) < (val.month, 
-                                                                 val.day))
+                                                                   val.day))
 
         if val > today:
             raise ValueError("Date of birth cannot be in the future")
@@ -25,6 +24,7 @@ class DOBMixin(BaseModel):
             raise ValueError("Age cannot be greater than 110")
 
         return val
+
     
 class UserBase(BaseModel):
     username: str

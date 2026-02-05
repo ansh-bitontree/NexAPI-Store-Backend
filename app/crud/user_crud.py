@@ -15,7 +15,7 @@ def get_user_by_username(db: Session, username: str):
 def create_user(db: Session, user: UserCreate):
     db_user = User(
         username=user.username,
-        email=user.email,
+        email=user.email.lower(),
         address=user.address,
         dob=user.dob,
         gender=user.gender,

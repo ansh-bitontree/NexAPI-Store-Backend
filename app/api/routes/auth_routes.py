@@ -2,7 +2,11 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app.schemas.user_schema import UserLogin, UserCreate
 from app.core.database import get_db
-from app.crud.user_crud import get_user_by_email, get_user_by_username, create_user
+from app.crud.user_crud import (
+                        get_user_by_email, 
+                        get_user_by_username,
+                        create_user,
+                        )
 from app.core.security import verify_password, create_access_token
 import os
 from dotenv import load_dotenv
@@ -32,8 +36,10 @@ def signup(user: UserCreate, db: Session = Depends(get_db)):
 def login(user: UserLogin, db: Session = Depends(get_db)):
     db_user = get_user_by_email(db, user.email)
 
-    if not db_user or not verify_password(user.password, db_user.hashed_password):
+    if not db_user or not verify_password(user.password,
+                                          db_user.hashed_password):
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
-    token = create_access_token({"sub": str(db_user.id)}, ACCESS_TOKEN_EXPIRE_MINUTES)
+    token = create_access_token({"sub": str(db_user.id)},
+                                ACCESS_TOKEN_EXPIRE_MINUTES)
     return {"access_token": token, "token_type": "bearer"}
