@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL")
+
 FORGET_PASSWORD_EXPIRE_MINUTES = int(
         os.getenv("FORGET_PASSWORD_EXPIRE_MINUTES", 10))
 
@@ -44,9 +46,9 @@ async def forgot_password(
                 user.email, expires_minutes=FORGET_PASSWORD_EXPIRE_MINUTES)
 
             forgot_url_link = (
-                                f"http://localhost:3000/reset-password?"
-                                f"token={token}"
-                            )       
+                f"{FRONTEND_BASE_URL}/reset-password?"
+                f"token={token}"
+            )      
 
             message = MessageSchema(
                 subject="Password Reset Instructions",
