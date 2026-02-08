@@ -52,6 +52,43 @@ class ResetPasswordRequest(BaseModel):
     new_password: str
 
 
+class UserUpdate(BaseModel):
+    username: Optional[str] = None
+    email: Optional[EmailStr] = None
+    address: Optional[str] = None
+    dob: Optional[date] = None
+    gender: Optional[str] = None
+    current_password: Optional[str] = None
+    new_password: Optional[str] = None
+    confirm_new_password: Optional[str] = None
+
+    @field_validator("dob", mode="before")
+    @classmethod
+    def validate_optional_dob(cls, v):
+        if v is None:
+            return v
+        if isinstance(v, str):
+            v = date.fromisoformat(v)
+
+        today = date.today()
+        age = today.year - v.year - ((today.month, today.day) < (v.month, 
+                                                                 v.day))
+
+        if v > today:
+            raise ValueError("Date of birth cannot be in the future")
+        if age < 18:
+            raise ValueError("You must be at least 18 years old")
+        if age > 110:
+            raise ValueError("Age cannot be greater than 110")
+
+        return v
+
+
+class UserResetPasswordRequest(BaseModel):
+    current_password: str
+    new_password: str
+    confirm_password: str
+
 
 
 

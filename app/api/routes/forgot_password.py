@@ -4,24 +4,22 @@ from app.core.security import create_reset_token
 from app.schemas.user_schema import ForgetPasswordRequest
 from app.core.database import get_db
 from app.crud.user_crud import get_user_by_email
-import os
+from app.core.config import settings
 from fastapi_mail import FastMail, MessageSchema, MessageType, ConnectionConfig
 from starlette.responses import JSONResponse
-from dotenv import load_dotenv
 
-load_dotenv()
 
-FRONTEND_BASE_URL = os.getenv("FRONTEND_BASE_URL")
+FRONTEND_BASE_URL = settings.FRONTEND_BASE_URL
 
 FORGET_PASSWORD_EXPIRE_MINUTES = int(
-        os.getenv("FORGET_PASSWORD_EXPIRE_MINUTES", 10))
+        settings.FORGET_PASSWORD_EXPIRE_MINUTES)
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 mail_conf = ConnectionConfig(
-    MAIL_USERNAME=os.getenv("MAIL_USERNAME"),   
-    MAIL_PASSWORD=os.getenv("MAIL_PASSWORD"),   
-    MAIL_FROM=os.getenv("MAIL_FROM"),           
+    MAIL_USERNAME=settings.MAIL_USERNAME,   
+    MAIL_PASSWORD=settings.MAIL_PASSWORD,   
+    MAIL_FROM=settings.MAIL_FROM,           
     MAIL_FROM_NAME="MY APP",
     MAIL_PORT=587,
     MAIL_SERVER="smtp.gmail.com",

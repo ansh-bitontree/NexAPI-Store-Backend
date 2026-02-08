@@ -8,13 +8,11 @@ from app.crud.user_crud import (
                         create_user,
                         )
 from app.core.security import verify_password, create_access_token
-import os
-from dotenv import load_dotenv
+from app.core.config import settings
 
-load_dotenv()
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 
 @router.post("/signup")
@@ -42,4 +40,12 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
 
     token = create_access_token({"sub": str(db_user.id)},
                                 ACCESS_TOKEN_EXPIRE_MINUTES)
-    return {"access_token": token, "token_type": "bearer"}
+    return {
+        "access_token": token,
+        "token_type": "bearer",
+        "user": {
+            "id": db_user.id,
+            "username": db_user.username,
+            "email": db_user.email
+        }
+    }
