@@ -3,7 +3,7 @@ from sqlalchemy import Column, Integer, String, Date
 
 
 class User(Base):
-    __tablename__ = "nextapi-users"
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(100), nullable=False, unique=True, index=True)
