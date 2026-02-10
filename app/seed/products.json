@@ -1,3 +1,4 @@
+
 [
   {
     "id": 11,
@@ -42,20 +43,6 @@
     "is_active": true
   },
   {
-    "id": 14,
-    "name": "Wireless Charging Pad",
-    "description": "Fast wireless charging pad compatible with smartphones and earbuds. Features sleek design, non-slip surface, and built-in safety protection against overheating.",
-    "price": 1599,
-    "discount_percentage": 7,
-    "quantity": 160,
-    "category": "Electronics",
-    "brand": "PowerDock",
-    "rating": 4.2,
-    "image_url": "https://images.unsplash.com/photo-1611078489935-5a6c6c33a7b7",
-    "created_at": "2025-01-28T13:10:00Z",
-    "is_active": true
-  },
-  {
     "id": 15,
     "name": "Office Ergonomic Chair",
     "description": "Comfortable ergonomic office chair designed to support posture during long working hours. Features adjustable height, lumbar support, breathable mesh, and smooth-rolling wheels.",
@@ -67,20 +54,6 @@
     "rating": 4.7,
     "image_url": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
     "created_at": "2025-01-29T10:00:00Z",
-    "is_active": true
-  },
-  {
-    "id": 16,
-    "name": "Smart Thermostat",
-    "description": "Energy-efficient smart thermostat that automatically adjusts temperature based on usage patterns. Helps reduce energy bills while maintaining optimal indoor comfort.",
-    "price": 7499,
-    "discount_percentage": 14,
-    "quantity": 45,
-    "category": "Home Appliances",
-    "brand": "ThermoSmart",
-    "rating": 4.5,
-    "image_url": "https://images.unsplash.com/photo-1581092160607-ee67c8e0f3c0",
-    "created_at": "2025-01-30T15:30:00Z",
     "is_active": true
   },
   {
@@ -98,34 +71,6 @@
     "is_active": true
   },
   {
-    "id": 18,
-    "name": "Smartphone Tripod Stand",
-    "description": "Adjustable tripod stand suitable for smartphones and small cameras. Perfect for video recording, online meetings, photography, and content creation.",
-    "price": 899,
-    "discount_percentage": 5,
-    "quantity": 220,
-    "category": "Accessories",
-    "brand": "StableShot",
-    "rating": 4.0,
-    "image_url": "https://images.unsplash.com/photo-1519183071298-a2962eadcdb2",
-    "created_at": "2025-02-01T11:25:00Z",
-    "is_active": true
-  },
-  {
-    "id": 19,
-    "name": "Air Purifier",
-    "description": "High-performance air purifier designed to remove dust, allergens, and pollutants. Features HEPA filtration and silent operation for improved indoor air quality.",
-    "price": 14999,
-    "discount_percentage": 20,
-    "quantity": 30,
-    "category": "Home Appliances",
-    "brand": "PureAir",
-    "rating": 4.6,
-    "image_url": "https://images.unsplash.com/photo-1580910051074-7c6c0b8b94f6",
-    "created_at": "2025-02-02T14:00:00Z",
-    "is_active": true
-  },
-  {
     "id": 20,
     "name": "Gaming Monitor 27-inch",
     "description": "High-refresh-rate 27-inch gaming monitor with QHD resolution and ultra-smooth visuals. Designed for competitive gamers and immersive entertainment experiences.",
@@ -138,7 +83,63 @@
     "image_url": "https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc",
     "created_at": "2025-02-03T16:10:00Z",
     "is_active": true
+  },
+  {
+    "id": 22,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical keyboard with tactile switches, durable build, and customizable lighting for productivity and gaming.",
+    "price": 6499,
+    "discount_percentage": 13,
+    "quantity": 60,
+    "category": "Electronics",
+    "brand": "KeyForge",
+    "rating": 4.6,
+    "image_url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8",
+    "created_at": "2025-02-04T11:30:00Z",
+    "is_active": true
+  },
+  {
+    "id": 23,
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with adjustable DPI and smooth tracking. Designed for long hours of comfortable use.",
+    "price": 1499,
+    "discount_percentage": 8,
+    "quantity": 150,
+    "category": "Accessories",
+    "brand": "ClickPro",
+    "rating": 4.3,
+    "image_url": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7",
+    "created_at": "2025-02-04T12:45:00Z",
+    "is_active": true
+  },
+  {
+    "id": 24,
+    "name": "Smart LED Desk Lamp",
+    "description": "Adjustable smart LED desk lamp with multiple brightness levels and color temperatures. Perfect for work and study.",
+    "price": 2599,
+    "discount_percentage": 10,
+    "quantity": 85,
+    "category": "Home Accessories",
+    "brand": "BrightEase",
+    "rating": 4.4,
+    "image_url": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c",
+    "created_at": "2025-02-04T14:10:00Z",
+    "is_active": true
+  },
+  {
+    "id": 25,
+    "name": "External SSD 1TB",
+    "description": "High-speed 1TB external SSD with USB-C support. Ideal for fast data transfer, backups, and professional workflows.",
+    "price": 8999,
+    "discount_percentage": 16,
+    "quantity": 40,
+    "category": "Storage",
+    "brand": "DataSwift",
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae",
+    "created_at": "2025-02-04T15:30:00Z",
+    "is_active": true
   }
 ]
- 
+
  
