@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from app.schemas.user_schema import ResetPasswordRequest
-from app.core.security import verify_reset_token, hash_password
-from app.crud.user_crud import get_user_by_email
+from app.services.auth_service import verify_reset_token, hash_password
+from app.services.user_service import get_user_by_email
 from app.core.database import get_db
 
 router = APIRouter(prefix="/auth", tags=["Auth"])

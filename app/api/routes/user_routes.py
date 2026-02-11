@@ -4,7 +4,7 @@ from app.api.deps import get_current_user
 from app.core.database import get_db
 from app.models.user_model import User
 from app.schemas.user_schema import UserUpdate, UserResetPasswordRequest
-from app.core.security import hash_password, verify_password
+from app.services.auth_service import hash_password, verify_password
 
 router = APIRouter(prefix="/users", tags=["Users"])
 

@@ -1,9 +1,9 @@
 from fastapi import Depends, HTTPException, status, BackgroundTasks, APIRouter
 from sqlalchemy.orm import Session
-from app.core.security import create_reset_token
+from app.services.auth_service import create_reset_token
 from app.schemas.user_schema import ForgetPasswordRequest
 from app.core.database import get_db
-from app.crud.user_crud import get_user_by_email
+from app.services.user_service import get_user_by_email
 from app.core.config import settings
 from fastapi_mail import FastMail, MessageSchema, MessageType, ConnectionConfig
 from starlette.responses import JSONResponse
