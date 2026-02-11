@@ -39,7 +39,6 @@ def list_products(
     if category:
         query = query.filter(Product.category == category)
 
-    # Apply sorting
     sort_column = getattr(Product, sort_by)
     if order == "desc":
         sort_column = sort_column.desc()
